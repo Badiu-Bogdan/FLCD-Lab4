@@ -1,0 +1,21 @@
+Git-link: https://github.com/Badiu-Bogdan/FLCD-Lab4
+
+For the menu part I have a couple of functions that print basic data like, States, Alphabet, Transitions, q0 and Final States
+
+Checking that the Finite Automata is Deterministic is done by going through all the keys, and looking if there is any list with a length greater than one.
+
+For example, the next representaion is Deterministic:
+
+Q = A B C
+E = 0 1
+q0 = A
+F = A C
+S =
+	(A,0) => A
+	(A,1) => C
+	(B,0) => B
+   	(C,1) => B
+
+
+Checking that a sequence is accepted by the Finite Automata is done by going through each symbol from the given sequence and checking that the respective point can be reached
+in the corresponding graph.

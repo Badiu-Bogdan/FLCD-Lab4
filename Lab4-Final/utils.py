@@ -5,6 +5,7 @@ def processLine(line: str):
     # return ce urmeaza dupa egal
     return line.strip().split(' ')[2:]
 
+
 class Utils:
 
     def readFromFile(file_name: str):
@@ -14,9 +15,8 @@ class Utils:
             q0 = processLine(file.readline())[0]
             F = processLine(file.readline())
 
-            file.readline()  # delta =
+            file.readline()
 
-            # Get all transitions
             delta = {}
             for line in file:
                 split = line.strip().split('=>')
@@ -25,7 +25,7 @@ class Utils:
                 destination = split[1].strip()
 
                 if (source, route) in delta.keys():
-                    delta[(source,route)].append(destination)
+                    delta[(source, route)].append(destination)
                 else:
                     delta[(source, route)] = [destination]
 
