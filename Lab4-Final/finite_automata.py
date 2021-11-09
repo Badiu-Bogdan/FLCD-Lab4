@@ -14,6 +14,17 @@ class FiniteAutomata:
                 return False
         return True
 
+    def isAccepted(self, sequence):
+        if self.isDFA():
+            current = self.q0
+            for symbol in sequence:
+                if (current, symbol) in self.delta.keys():
+                    current = self.delta[(current, symbol)][0]
+                else:
+                    return False
+            return current in self.F
+        return False
+
     def __str__(self):
         return "Q = { " + ', '.join(self.Q) + " }\n" \
                "E = { " + ', '.join(self.E) + " }\n" \
